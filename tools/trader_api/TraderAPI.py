@@ -34,6 +34,10 @@ class TraderAPI:
     def store_spot(self, order_id, type, value):
         data=[('order_id', order_id), ('type', type), ('value', value)] 
         return self.__submit_post(self.url.spot_store_url(), data)
+    
+    def store_rus_stock(self, data):
+        data=[('value', data)] 
+        return self.__submit_post(self.url.save_rus_stock(), data)
 
     def store_console(self, type, message, value):
         data=[('type', type), ('message', message), ('value', value)] 

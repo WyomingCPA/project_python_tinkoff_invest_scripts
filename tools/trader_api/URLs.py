@@ -1,8 +1,8 @@
 class URLs:
     def __init__(self, response_format="json"):
         self.format = response_format
-        #self.base_url = "http://localhost/trade-tools/public/api"
-        self.base_url = "http://trade-tools.simpleitrunner.ru:3000/api"
+        self.base_url = "http://localhost/trade-tools/public/api"
+        #self.base_url = "http://trade-tools.simpleitrunner.ru:3000/api"
 
         # account
         self.accounts = "accounts.{format}".format(format=self.format)
@@ -30,6 +30,9 @@ class URLs:
 
         #console log
         self.console_store = "/console/store"
+
+        #get data from Tinkoff
+        self.save_rus = "/data/save-rus-stock"
         
 
     def base_url(self):
@@ -73,3 +76,6 @@ class URLs:
 
     def quote_url(self):
         return self.base_url + self.quote
+    
+    def save_rus_stock(self):
+        return self.base_url + self.save_rus
